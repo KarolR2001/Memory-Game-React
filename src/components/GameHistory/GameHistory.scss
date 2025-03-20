@@ -1,0 +1,235 @@
+.game-history-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .modal-content {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--color-text-bg), var(--color-bg));
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--color-text);
+      margin: 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .history-stats {
+      p {
+        font-size: 1rem;
+        color: var(--color-text);
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--color-text);
+      opacity: 0.7;
+    }
+
+    .sort-controls {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+      gap: 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--color-secondary);
+
+      label {
+        font-size: 1rem;
+        color: var(--color-text);
+        text-wrap: nowrap;
+      }
+    }
+
+    .history-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+
+      .history-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid var(--color-secondary);
+        transition: background 0.3s ease;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &.best-score {
+          background: linear-gradient(15deg, var(--color-secondary), var(--color-bg));
+          font-weight: bold;
+        }
+
+        span {
+          font-size: 1rem;
+          color: var(--color-text);
+        }
+
+        .date {
+          flex: 2;
+          text-align: left;
+        }
+
+        .attempts,
+        .duration {
+          flex: 1;
+          text-align: center;
+        }
+      }
+    }
+
+    .clear-confirmation {
+      padding: 15px;
+      border-bottom: 1px solid var(--color-secondary);
+      border-top: 1px solid var(--color-secondary);
+
+      p {
+        margin: 0 0 10px 0;
+        font-size: 1.1rem;
+        color: var(--color-text);
+        opacity: 1;
+      }
+
+      .confirmation-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .history-stats p {
+      font-size: 0.9rem;
+    }
+
+    .sort-controls {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .history-list .history-item {
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+
+      span {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .date {
+        text-align: center;
+      }
+    }
+
+    .clear-confirmation {
+      .confirmation-buttons {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    .modal-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 10px;
+    width: 95%;
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    .history-stats p {
+      font-size: 0.8rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .sort-controls {
+      label {
+        font-size: 0.9rem;
+      }
+    }
+
+    .history-list .history-item {
+      padding: 6px;
+
+      span {
+        font-size: 0.8rem;
+      }
+    }
+
+    .clear-confirmation {
+      p {
+        font-size: 0.9rem;
+      }
+
+      .confirmation-buttons button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
+    }
+
+    .modal-buttons {
+      button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
+    }
+  }
+}

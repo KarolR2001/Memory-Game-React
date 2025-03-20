@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #ECEBDE;
+  --color-primary: #A59D84;
+  --color-secondary: #C1BAA1;
+  --color-text-bg: #D7D3BF;
+  --color-text: #4A4538;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--color-bg);
+}

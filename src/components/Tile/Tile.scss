@@ -1,0 +1,83 @@
+@keyframes pulse {
+  0% {
+    transform: rotateY(180deg) scale(1); 
+  }
+  50% {
+    transform: rotateY(180deg) scale(1.1); 
+  }
+  100% {
+    transform: rotateY(180deg) scale(1);
+  }
+}
+
+.tile {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+
+  &.matched {
+    opacity: 0.8;
+    pointer-events: none; 
+  }
+
+  .tile-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+
+  &.flipped .tile-inner {
+    transform: rotateY(180deg);
+  }
+
+  .tile-back,
+  .tile-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 48px;
+    box-shadow: var(--shadow);
+  }
+
+  .tile-back {
+    background: linear-gradient(135deg, var(--color-text-bg), var(--color-bg));
+  }
+
+  .tile-front {
+    background: linear-gradient(135deg, var(--color-text), var(--color-secondary));
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.pulse {
+      animation: pulse 0.5s ease-in-out 2; 
+    }
+
+    img {
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      border-radius: 13px;
+      padding: 1px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tile {
+    padding-bottom: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tile {
+    padding-bottom: 100%;
+  }
+}

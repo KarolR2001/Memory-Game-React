@@ -1,0 +1,148 @@
+:root {
+  --color-bg: #ECEBDE;
+  --color-primary: #A59D84;
+  --color-secondary: #C1BAA1;
+  --color-text-bg: #D7D3BF;
+  --color-text: #4A4538;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App {
+  width: 100vw;
+  height: 100dvh;
+  max-height: calc(var(--vh, 1vh) * 100);
+  margin: 0;
+  padding: 20px;
+  background: var(--color-bg);
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .app-logo {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+  }
+
+  .start-screen {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    background: var(--color-text-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background: white;
+      color: var(--color-text);
+      cursor: pointer;
+      transition: box-shadow 0.2s ease;
+
+      &:hover {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .game-screen {
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+
+    .app-logo {
+      width: 80px;
+      top: 15px;
+      left: 15px;
+    }
+
+    .start-screen,
+    .game-screen .controls {
+      flex-direction: row;
+      gap: 10px;
+      padding: 10px;
+
+      select {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+    overflow: auto;
+
+    .app-logo {
+      width: 60px;
+      top: 10px;
+      left: 10px;
+      display: none;
+    }
+
+    .start-screen,
+    .game-screen .controls {
+      gap: 8px;
+      padding: 8px;
+      flex-direction: row;
+
+      select {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
+    }
+  }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeOut 3s ease-in-out forwards;
+
+  .splash-logo {
+    height: auto;
+    max-width: 50%;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+  }
+}

@@ -1,0 +1,75 @@
+.game-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+  gap: 30px;
+  
+  background: var(--color-text-bg);
+
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    gap: 5px;
+  }
+
+  .label {
+    font-size: 0.9rem;
+    color: var(--color-text); 
+    text-transform: uppercase;
+  }
+
+  .value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-text); 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .game-stats {
+    padding: 6px;
+    max-width: 200px;
+
+    .label {
+      font-size: 0.8rem;
+    }
+
+    .value {
+      font-size: 1rem;
+    }
+    .stat {
+      flex-direction: row;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .game-stats {
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+
+    .label {
+      font-size: 0.75rem;
+    }
+
+    .value {
+      font-size: 0.9rem;
+    }
+    .stat {
+      flex-direction: row;
+    }
+  }
+}
