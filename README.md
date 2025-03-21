@@ -5,6 +5,9 @@
 ## Opis
 Memory Game to prosta, ale wciągająca gra w pamięć, zbudowana w React z użyciem Vite i Zustand. Gracz musi odkrywać pary identycznych obrazków, starając się zrobić to w jak najmniejszej liczbie prób i czasie. Aplikacja oferuje różne poziomy trudności, statystyki na żywo oraz historię gier.
 
+## Demo
+Aplikacja jest dostępna online pod adresem: [Memory Game](https://memory-game-sigma-bice.vercel.app/)
+
 ## Funkcje
 - **Wiele poziomów trudności:** Wybierz poziom od 6 do 18 kart.
 - **Statystyki na żywo:** Śledź liczbę prób i czas gry.
