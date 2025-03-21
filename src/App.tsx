@@ -6,7 +6,7 @@ import GameStats from './components/GameStats/GameStats';
 import GameHistory from './components/GameHistory/GameHistory';
 import CustomSelect from './components/Controls/CustomSelect/CustomSelect';
 import CustomButton from './components/Controls/CustomButton/CustomButton'; 
-import Logo from './assets/logo.svg';
+import Logo from './assets/LOGO.svg';
 import './styles/App.scss';
 
 const App = () => {
